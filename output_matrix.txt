@@ -1,0 +1,18 @@
+Missing Q32 Participant concern score = 13, trust score = 3, behaviorial score = 3
+Participant concern score = 17, trust score = 7, behaviorial score = 3
+Participant concern score = 22, trust score = 8, behaviorial score = 2
+Participant concern score = 26, trust score = 9, behaviorial score = 2
+Missing Q32 Participant concern score = 17, trust score = 6, behaviorial score = 3
+Participant concern score = 24, trust score = 10, behaviorial score = 3
+Participant concern score = 25, trust score = 9, behaviorial score = 3
+Missing Q32 Participant concern score = 12, trust score = 5, behaviorial score = 2
+Participant concern score = 23, trust score = 9, behaviorial score = 3
+Participant concern score = 23, trust score = 9, behaviorial score = 3
+Participant concern score = 25, trust score = 8, behaviorial score = 3
+Participant concern score = 22, trust score = 7, behaviorial score = 3
+Participant concern score = 26, trust score = 7, behaviorial score = 3
+Participant concern score = 26, trust score = 8, behaviorial score = 3
+Participant concern score = 27, trust score = 10, behaviorial score = 3
+Participant concern score = 21, trust score = 8, behaviorial score = 3
+Participant concern score = 29, trust score = 9, behaviorial score = 3
+Missing Q32 Participant concern score = 18, trust score = 8, behaviorial score = 3

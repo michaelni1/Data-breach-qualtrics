@@ -1,0 +1,14 @@
+﻿  calculate.cpp
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(66,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(78,43): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(94,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(106,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(186,31): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(200,43): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(214,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(229,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(237,39): warning C4018: '<': signed/unsigned mismatch
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(240,59): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(25): warning C4715: 'get_behavior_val': not all control paths return a value
+C:\Users\nimic\Downloads\data_breach_calculations\calculate.cpp(43): warning C4715: 'get_feeling_val': not all control paths return a value
+  data_breach_calculations.vcxproj -> C:\Users\nimic\Downloads\data_breach_calculations\Debug\data_breach_calculations.exe
