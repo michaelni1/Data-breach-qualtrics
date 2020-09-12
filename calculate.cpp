@@ -22,6 +22,7 @@ int get_behavior_val(string feeling) {
     else if (feeling == "Strongly Agree") {
         return 5;
     }
+    return 99999;
 }
 
 int get_feeling_val(string feeling) {
@@ -40,10 +41,15 @@ int get_feeling_val(string feeling) {
     else if (feeling == "Definitely Not") {
         return 1;
     }
+    return 99999;
 }
 
 int main(int argc, char *argv[]) {
     ios_base::sync_with_stdio(false);
+
+    //get rid of makefile error
+    int dummy = argc;
+    dummy += 2;
 
     ifstream fin(argv[2]);
     ofstream fout(argv[3]);
@@ -63,7 +69,7 @@ int main(int argc, char *argv[]) {
             bool notification_participant = false;
             bool first_comma = true;
             //parse line
-            for (int i = 0; i < line.size(); ++i) {
+            for (size_t i = 0; i < line.size(); ++i) {
                 vector<string> answers;
                 if (line[i] == ',') {
                     //missing question 16
@@ -75,7 +81,7 @@ int main(int argc, char *argv[]) {
                 }
                 else if (line[i] == '"') {
                     string input = "";
-                    for (int j = i + 1; j < line.size(); ++j) {
+                    for (size_t j = i + 1; j < line.size(); ++j) {
                         if (line[j] == ',') {
                             answers.push_back(input);
                             input.clear();
@@ -91,7 +97,7 @@ int main(int argc, char *argv[]) {
                 }
                 else {
                     string input = "";
-                    for (int j = i; j < line.size(); ++j) {
+                    for (size_t j = i; j < line.size(); ++j) {
                         if (line[j] == ',') {
                             answers.push_back(input);
                             i = j;
@@ -103,7 +109,7 @@ int main(int argc, char *argv[]) {
 
                 //checking answers to see if any match
                 //since answers are exact and unique, only one can match
-                for (int k = 0; k < answers.size(); ++k) {
+                for (size_t k = 0; k < answers.size(); ++k) {
                     //check answers for question 16
                     if (answers[k] == "Name" || answers[k] == "Social security number" || answers[k] == "Credit card number") {
                         comp_score += 0.2;
@@ -171,19 +177,16 @@ int main(int argc, char *argv[]) {
             //get rid of second date
             line = line.substr(10, line.size());
 
-            //4 5 trust answers
-            int question_num = 0;
-
             int trust_score = 0;
             int concern_score = 0;
-            int behaviorial_score = 0;
+            double behaviorial_score = 0;
 
             bool first_comma = true;
             bool missing_q32 = false;
 
             bool parsed_feelings = false;
             //parse line
-            for (int i = 0; i < line.size(); ++i) {
+            for (size_t i = 0; i < line.size(); ++i) {
                 //check if q32 is missing
                 if (line[i] == ',') {
                     if (first_comma) {
@@ -197,7 +200,7 @@ int main(int argc, char *argv[]) {
                     vector<string> answers;
                     string sub_line = "";
                     sub_line += line[i];
-                    for (int j = i + 1; j < line.size(); ++j) {
+                    for (size_t j = i + 1; j < line.size(); ++j) {
                         if (line[j - 1] == ',' && line[j] == ',') {
                             i = j;
                             break;
@@ -211,7 +214,7 @@ int main(int argc, char *argv[]) {
                     }
 
                     //calculate answers
-                    for (int i = 0; i < answers.size(); ++i) {
+                    for (size_t i = 0; i < answers.size(); ++i) {
                         //answers 4 and 5 are trust
                         if (i == 4 || i == 5) {
                             trust_score += get_feeling_val(answers[i]);
@@ -226,7 +229,7 @@ int main(int argc, char *argv[]) {
                     //lets parse behaviorials
                     vector<string> answers;
                     string sub_line = "";
-                    for (int j = i; j < line.size(); ++j) {
+                    for (size_t j = i; j < line.size(); ++j) {
                         if (line[j] == ',') {
                             answers.push_back(sub_line);
                             sub_line = "";
@@ -234,7 +237,7 @@ int main(int argc, char *argv[]) {
                         }
                         sub_line += line[j];
                     }
-                    for (int k = 0; k < answers.size(); ++k) {
+                    for (size_t k = 0; k < answers.size(); ++k) {
                         behaviorial_score += get_behavior_val(answers[k]);
                     }
                     behaviorial_score = behaviorial_score / 28.0;
@@ -251,4 +254,5 @@ int main(int argc, char *argv[]) {
             }
         }
     }
+    return 0;
 }
